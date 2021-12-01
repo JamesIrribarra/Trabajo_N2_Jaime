@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "370928304922",
+    "project_id": "trabajo-n2-tnt",
+    "storage_bucket": "trabajo-n2-tnt.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:370928304922:android:a9983189d9ed7dac99e2a3",
+        "android_client_info": {
+          "package_name": "com.example.trabajo_n2_jaime"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "370928304922-d198ode6f0e4ujp9m813iddu2hjdt8ph.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWxt-0k3GSXMRi7mcQH2X-7gELCT3o6_4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "370928304922-d198ode6f0e4ujp9m813iddu2hjdt8ph.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
