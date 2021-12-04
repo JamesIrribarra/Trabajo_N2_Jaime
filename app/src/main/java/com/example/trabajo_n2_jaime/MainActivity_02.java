@@ -1,5 +1,6 @@
 package com.example.trabajo_n2_jaime;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -8,9 +9,14 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+
+import com.example.trabajo_n2_jaime.Clases.Lugar;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,17 +49,36 @@ public class MainActivity_02 extends AppCompatActivity {
         bTAgregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Lugar lugar = new Lugar();
-                lugar.setIDAutor(UUID.randomUUID().toString());
-                lugar.setDireccionLugar(eTDireccion.getText().toString());
-                lugar.setNombreLugar(eTNombre.getText().toString());
-                databaseReference.child("Latam").child(lugar.getIDAutor()).setValue(lugar);
+                Lugar lugar =new Lugar();
+                //lugar.setIdAutor("123456");
+                lugar.setIdAutor(UUID.randomUUID().toString());
+                lugar.seteTNombre(eTNombre.getText().toString());
+                lugar.seteTDireccion(eTDireccion.getText().toString());
+                databaseReference.child("Lugar").child(lugar.geteTNombre()).setValue(lugar);
             }
         });
 
     }
 
     private void listarDatos() {
+ databaseReference.child("Lugar").addValueEventListener(new ValueEventListener() {
+     @Override
+     public void onDataChange(@NonNull DataSnapshot snapshot) {
+         ListLugar.clear();
+         for (DataSnapshot objS : snapshot.getChildren()){
+             Lugar lu = objS.getValue(Lugar.class);
+             ListLugar.add(lu);
+             arrayAdapterLugar = new ArrayAdapter<Lugar>(MainActivity_02.this, android.R.layout.simple_expandable_list_item_1,ListLugar);
+             LvListadoLugar.setAdapter(arrayAdapterLugar);
+
+         }
+     }
+
+     @Override
+     public void onCancelled(@NonNull DatabaseError error) {
+
+     }
+ });
 
     }
 

@@ -12,7 +12,7 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:text="INICIO DE SECION"
+        android:text="INICIO DE SESION"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textSize="34sp"
@@ -30,7 +30,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Nombre Usuario"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/textView3"
@@ -44,12 +45,80 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Contraseña"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
     <Button
         android:id="@+id/bTIniciar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="INICIAR" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="UBICACION ACTUAL DEL USUARIO"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="16sp"
+        android:textStyle="bold|italic" />
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LATITUD:"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvLatitud"
+        android:layout_width="376dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="4dp"
+        android:text="Latitud"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LONGITUD"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvLongitud"
+        android:layout_width="376dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="4dp"
+        android:text="Longitud"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLatitud" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DIRECCION DEL USUARIO :"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvDireccion"
+        android:layout_width="376dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="4dp"
+        android:text="Direccion"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLongitud" />
+
+
+
+
 
 </LinearLayout>
